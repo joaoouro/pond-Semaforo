@@ -115,6 +115,9 @@ void setup() {
   pinMode(greenLed, OUTPUT);
   pinMode(yellowPin, OUTPUT);
   
+  // Configura os pinos I2C para evitar conflito
+  Wire.begin(16, 17); // SDA = GPIO 16, SCL = GPIO 17
+
   // Inicializa o LCD
   lcd.init();
   lcd.backlight();
